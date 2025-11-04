@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Launch Synopsys DC
+Exec=/usr/local/bin/start_eda.sh
+Terminal=true
+X-GNOME-Autostart-enabled=true
+
