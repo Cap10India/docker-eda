@@ -9,14 +9,14 @@ pipeline {
         )
         string(
             name: 'APP_PORT',
-            defaultValue: '8080',
+            defaultValue: '',
             description: 'Enter the Port number to expose the container on (example: 8081)'
         )
     }
 
     environment {
         DOCKER_REPO = "edatest"    // Update this
-        UNIQUE_TAG = "${params.BUILD_ID}"   // Auto unique image tag
+        UNIQUE_TAG = "${env.BUILD_NUMBER}"   // Auto unique image tag
     }
 
     stages {
