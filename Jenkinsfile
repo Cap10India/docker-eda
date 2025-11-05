@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'docker-cloud' } 
+    agent any
 
     parameters {
         string(
@@ -16,7 +16,7 @@ pipeline {
 
     environment {
         DOCKER_REPO = "edatest"    // Update this
-        UNIQUE_TAG = "${new Date().format('yyyyMMdd-HHmmss')}"   // Auto unique image tag
+        UNIQUE_TAG = "${params.BUILD_ID}"   // Auto unique image tag
     }
 
     stages {
@@ -64,7 +64,7 @@ pipeline {
                 script {
                     echo "Running Container: ${params.CONTAINER_NAME}"
                     sh """
-                        docker volume create ${USER_NAME}_UL
+                        docker volume create ${params.CONTAINER_NAME}_UL
                     """
                 }
             }
