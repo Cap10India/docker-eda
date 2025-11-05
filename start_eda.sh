@@ -6,6 +6,5 @@ HOST="10.71.0.10"
 
 echo "[Startup] Auto SSH login to $USER@$HOST..."
 
-sshpass -p "$PASSWORD" ssh -X -t -t -o StrictHostKeyChecking=no "$USER@$HOST" \
-'csh -c "source ~/.cshrc; dc_shell -gui; exec csh"'
+sshpass -p "$PASSWORD" ssh -X "dc_shell -gui" -t -t -o StrictHostKeyChecking=no "$USER@$HOST" 
 
