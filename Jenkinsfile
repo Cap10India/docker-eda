@@ -34,13 +34,6 @@ pipeline {
                 }
             }
         }
-
-        stage('Checkout Code from GitHub') {
-            steps {
-                git branch: 'pipeline', url: 'https://github.com/Cap10India/docker-eda.git'
-            }
-        }
-
         stage('Build Docker Image') {
             steps {
                 script {
