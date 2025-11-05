@@ -4,7 +4,6 @@ PASSWORD="Varun@123"
 USER="varun.g"
 HOST="10.71.0.10"
 
-echo "[Startup] Auto SSH login to $USER@$HOST..."
+echo "[Startup] Launching dc_shell GUI on $USER@$HOST ..."
 
-sshpass -p "$PASSWORD" ssh -X -t -t -o StrictHostKeyChecking=no "$USER@$HOST" "dc_shell -gui"\
-'csh -c "source ~/.cshrc; exec csh"'
+sshpass -p "$PASSWORD" ssh -X -tt -o StrictHostKeyChecking=no "$USER@$HOST" "source ~/.cshrc; exec dc_shell -gui"
