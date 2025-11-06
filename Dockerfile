@@ -10,8 +10,6 @@ RUN apt update && apt install -y lubuntu-desktop \
     curl \
     && apt clean
     
-RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-    
 
 RUN [ -e /run/reboot-required* ] && rm /run/reboot-required* || true
 
