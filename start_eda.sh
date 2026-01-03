@@ -6,4 +6,4 @@ HOST="10.71.0.10"
 
 echo "[Startup] Launching dc_shell GUI on $USER@$HOST ..."
 
-sshpass -p "$PASSWORD" ssh -X -tt -o StrictHostKeyChecking=no "$USER@$HOST" "source ~/.cshrc; exec dc_shell -gui"
+sshpass -p "$PASSWORD" ssh -X -tt -o StrictHostKeyChecking=no "$USER@$HOST" "exec dc_shell -gui"
